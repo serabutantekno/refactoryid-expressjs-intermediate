@@ -18,6 +18,20 @@ class TodoController {
         res.json(data)
     }
 
+    static async update(req, res) {
+        const data = await Todo.update(req.body, {
+            where: {
+                id: req.params["id"],
+            }
+        })
+        if (data) {
+            const get = await Todo.findByPk(req.params["id"])
+            res.json(get)
+        } else {
+            res.json("failed")
+        }
+    }
+
 }
 
 
