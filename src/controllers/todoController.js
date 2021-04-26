@@ -13,6 +13,11 @@ class TodoController {
         res.json(data)
     }
 
+    static async create(req, res) {
+        const data = await Todo.create(req.body)
+        res.json(data)
+    }
+
 }
 
 
