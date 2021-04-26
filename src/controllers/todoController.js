@@ -32,6 +32,19 @@ class TodoController {
         }
     }
 
+    static async delete(req, res) {
+        const data = await Todo.destroy({
+            where: {
+                id: req.params["id"]
+            }
+        })
+        if (data) {
+            res.json("data destroyed")
+        } else {
+            res.json("data not found")
+        }
+    }
+
 }
 
 
