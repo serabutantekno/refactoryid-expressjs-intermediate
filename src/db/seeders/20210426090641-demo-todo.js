@@ -1,20 +1,24 @@
 'use strict';
 
+const faker = require("faker")
+
+const todos = () => {
+  const data = []
+  for (let i = 0; i <= 50 ; i++) {
+    data.push({
+      title: faker.lorem.sentence(),
+      desc: faker.lorem.sentence(),
+      status: true,
+      createdAt: faker.date.recent(),
+      updatedAt: faker.date.recent()
+    })
+  }
+  return data
+}
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Todos', [{
-      title: 'coffee',
-      desc: 'make a cup of coffee',
-      status: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: 'coffee 2',
-      desc: 'make a cup of coffee 2',
-      status: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }]);
+    return queryInterface.bulkInsert('Todos', todos());
   },
 
   down: async (queryInterface, Sequelize) => {
