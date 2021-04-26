@@ -11,3 +11,9 @@ npx sequelize-cli model:generate --name Todo --attributes title:string,desc:stri
 ```sequelize
 npx sequelize-cli db:create
 ```
+
+3. Migrate
+
+```sequelize
+npx sequelize-cli db:migrate
+```
