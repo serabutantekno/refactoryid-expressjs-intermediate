@@ -1,8 +1,8 @@
-{
+module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "username": "dev",
+    "password": "012345678",
+    "database": "refactory_expressjs",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
